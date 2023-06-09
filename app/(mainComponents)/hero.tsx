@@ -6,7 +6,7 @@ function Hero() {
       <div className="w-full md:w-[60vw]  h-[30%] flex flex-col items-start justify-center text-left mt-10 pl-5 md:ml-10">
         <h1 className="text-[50px] md:text-[70px] font-black text-headingRed leading-[1]">
           Handling your <span className="text-headingBlue">Travel Stress</span>,
-          so you don't have to.
+          so you don&apos;t have to.
         </h1>
       </div>
       <div className="h-[60%] w-full flex flex-row items-center justify-center">

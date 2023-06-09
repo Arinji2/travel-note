@@ -56,13 +56,13 @@ function Features() {
             <div className="w-[90%] h-[30px] flex flex-row items-center justify-start gap-2">
               <div className="w-[15px] h-[15px] bg-text rounded-full"></div>
               <p className="font-bold text-text text-[12px] md:text-[15px]">
-                Record all the trip's spending's.
+                Record all the trip&apos;s spending&apos;s.
               </p>
             </div>
             <div className="w-[90%] h-[30px] flex flex-row items-center justify-start gap-2">
               <div className="w-[15px] h-[15px] bg-text rounded-full"></div>
               <p className="font-bold text-text text-[12px] md:text-[15px]">
-                Group spending's into families and friends.
+                Group spending&apos;s into families and friends.
               </p>
             </div>
             <div className="w-[90%] h-[30px] flex flex-row items-center justify-start gap-2">
@@ -129,32 +129,34 @@ function Features() {
       <div className="w-full h-fit flex flex-col md:flex-row-reverse items-center justify-center md:justify-start gap-3 md:gap-5">
         <div className="w-[90vw] md:w-[65vw] h-[400px] flex md:flex-row flex-col items-center justify-center bg-[#1E1E1E] md:mr-5 rounded-lg">
           <div className="w-full h-[48%] md:w-[30%] md:h-full flex flex-col items-center justify-center">
-            <h2 className="font-black text-headingBlue text-[70px]">PDF's</h2>
+            <h2 className="font-black text-headingBlue text-[70px]">
+              PDF&apos;s
+            </h2>
           </div>
           <div className="md:w-[5px] md:h-[40%] bg-headingBlue md:ml-3 w-[80%] h-[2%]"></div>
           <div className="w-full h-[60%] md:w-[65%] md:h-full flex flex-col items-center justify-center gap-3">
             <div className="w-[90%] h-[30px] flex flex-row items-center justify-start gap-2">
               <div className="w-[15px] h-[15px] bg-text rounded-full"></div>
               <p className="font-bold text-text text-[12px] md:text-[15px]">
-                Store Trip Bookings as PDF's.
+                Store Trip Bookings as PDF&apos;s.
               </p>
             </div>
             <div className="w-[90%] h-[30px] flex flex-row items-center justify-start gap-2">
               <div className="w-[15px] h-[15px] bg-text rounded-full"></div>
               <p className="font-bold text-text text-[12px] md:text-[15px]">
-                View all PDF's from the site directly.
+                View all PDF&apos;s from the site directly.
               </p>
             </div>
             <div className="w-[90%] h-[30px] flex flex-row items-center justify-start gap-2">
               <div className="w-[15px] h-[15px] bg-text rounded-full"></div>
               <p className="font-bold text-text text-[12px] md:text-[15px]">
-                Share links to PDF's.
+                Share links to PDF&apos;s.
               </p>
             </div>
             <div className="w-[90%] h-[30px] flex flex-row items-center justify-start gap-2">
               <div className="w-[15px] h-[15px] bg-text rounded-full"></div>
               <p className="font-bold text-text text-[12px] md:text-[15px]">
-                Manage PDF's as the need arises.
+                Manage PDF&apos;s as the need arises.
               </p>
             </div>
           </div>
