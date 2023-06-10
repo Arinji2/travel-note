@@ -1,4 +1,6 @@
+"use client";
 import Image from "next/image";
+import Link from "next/link";
 
 function CTA() {
   return (
@@ -16,9 +18,12 @@ function CTA() {
       <h3 className="text-[40px] font-black text-headingRed md:text-[80px] z-30 text-center">
         What are you waiting for?
       </h3>
-      <p className="px-10 p-3 pl-6 pr-6 font-black border border-b-4 border-l-4 border-black rounded-lg shadow-lg text-[15px] md:text-[30px] text-headingBlue bg-background hover:cursor-pointer  hover:text-background hover:bg-headingBlue transition-all ease-in-out duration-300 z-30">
+      <Link
+        href="/signup"
+        className="px-10 p-3 pl-6 pr-6 font-black border border-b-4 border-l-4 border-black rounded-lg shadow-lg text-[15px] md:text-[30px] text-headingBlue bg-background hover:cursor-pointer  hover:text-background hover:bg-headingBlue transition-all ease-in-out duration-300 z-30"
+      >
         Start Traveling
-      </p>
+      </Link>
     </div>
   );
 }
