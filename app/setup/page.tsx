@@ -8,7 +8,7 @@ export default async function SetupPage() {
   const user = await currentUser();
   const supabase = await useSupabase();
   const checkUser = async () => {
-    let { data } = await supabase.from("users").select("*");
+    let { data } = await supabase.from("users").select("*").eq("id", userId);
     if (data?.length != 0) redirect("/dashboard");
   };
   await checkUser();

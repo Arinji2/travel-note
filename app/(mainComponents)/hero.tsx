@@ -1,8 +1,10 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { useAuth } from "@clerk/nextjs";
 
 function Hero() {
+  const { isSignedIn } = useAuth();
   return (
     <div className="w-full h-[100svh] bg-background flex flex-col items-center md:items-start justify-start">
       <div className="w-full md:w-[60vw]  h-[30%] flex flex-col items-start justify-center text-left mt-10 pl-5 md:ml-10">
@@ -52,7 +54,7 @@ function Hero() {
       </div>
       <div className="h-[20%] md:w-[40vw] w-full flex flex-col items-center justify-start md:justify-center ">
         <Link
-          href="/signup"
+          href={isSignedIn ? "/dashboard" : "/signup"}
           className="px-10 p-3 pl-6 pr-6 font-black border border-b-4 border-l-4 border-black rounded-lg shadow-lg text-[30px] text-background bg-headingBlue hover:cursor-pointer  hover:text-headingBlue hover:bg-background transition-all ease-in-out duration-300"
         >
           Get Started
