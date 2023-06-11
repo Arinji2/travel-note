@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import Logo from "./logo";
 import Profile from "./profileButton";
 import { useSupabase } from "@/utils/hooks/useSupabase";
+import { auth } from "@clerk/nextjs";
 
 export const metadata = {
   title: "Travel Note | Dashboard",
@@ -14,7 +15,11 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   const supabase = await useSupabase();
-  const { data } = await supabase.from("users").select("username");
+  const { userId } = auth();
+  const { data } = await supabase
+    .from("users")
+    .select("username")
+    .eq("id", userId);
   if (data === null) redirect("/setup");
   return (
     <div>
