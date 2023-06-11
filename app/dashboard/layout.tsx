@@ -17,7 +17,7 @@ export default async function RootLayout({
   const { data } = await supabase.from("users").select("username");
   if (data === null) redirect("/setup");
   return (
-    <body>
+    <div>
       <div className="bg-[#1E1E1E] sticky top-0 w-full h-[120px] z-[1000] flex flex-row items-center justify-center md:justify-start">
         <div className="w-[50%] h-full flex flex-row items-center justify-start">
           <div className="w-[80%] md:w-[30%] h-full  flex flex-row items-center justify-center gap-5">
@@ -38,6 +38,6 @@ export default async function RootLayout({
         </div>
       </div>
       {children}
-    </body>
+    </div>
   );
 }
