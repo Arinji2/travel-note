@@ -12,17 +12,17 @@ function SaveButon() {
       <h4
         className="text-white text-[20px] font-bold p-4 pl-8 pr-8 rounded-[5px] bg-green-500 md:ml-10 ml-5  hover:cursor-pointer transition-all ease-in-out duration-300 border-green-500 border-4 hover:bg-white hover:text-green-500"
         onClick={() => {
-          const name = localStorage.getItem("tripName");
-          const color = localStorage.getItem("tripColor");
+          const area = localStorage.getItem("tripArea");
+          const date = localStorage.getItem("tripDate");
 
-          if (name === null) {
+          if (area === null) {
             setError(true);
-            setMessage("Please save Name");
-          } else if (color === null) {
+            setMessage("Please choose Area");
+          } else if (date === null) {
             setError(true);
-            setMessage("Please save Color");
+            setMessage("Please select Date");
           } else {
-            router.push("/trip/create/date");
+            router.push("/trip/create/budget");
           }
         }}
       >

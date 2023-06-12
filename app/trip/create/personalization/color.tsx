@@ -43,7 +43,7 @@ function ColorInput() {
               setSave(false);
               setError(true);
             } else {
-              localStorage.setItem("color", color);
+              localStorage.setItem("tripColor", color);
               setSave(true);
               setError(false);
             }
