@@ -21,7 +21,7 @@ export default async function Dashboard() {
         <h1 className="text-[60px] font-black text-headingRed">Trips:</h1>
       </div>
 
-      <div className="md:w-[70%] w-[90%] h-fit flex flex-row items-center justify-start flex-wrap pt-5 gap-5">
+      <div className="md:w-[80%] w-[90%] h-fit flex flex-row items-center justify-start flex-wrap pt-5 gap-5">
         <CreateTrip />
         {trips.map((trip) => (
           <TripCard tripData={trip} key={trip.id} />

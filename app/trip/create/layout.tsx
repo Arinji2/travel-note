@@ -14,14 +14,14 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  //const supabase = await useSupabase();
-  //const { userId } = auth();
-  /*const { data } = await supabase
+  const supabase = await useSupabase();
+  const { userId } = auth();
+  const { data } = await supabase
     .from("users")
     .select("username")
     .eq("id", userId);
   if (data === null) redirect("/setup");
-  */
+
   return (
     <div>
       <div className="bg-[#1E1E1E] sticky top-0 w-full h-[120px] z-[1000] flex flex-row items-center justify-center md:justify-start">
@@ -33,7 +33,7 @@ export default async function RootLayout({
 
           <div className="w-[60%] h-full  hidden md:flex  flex-col items-start justify-center">
             <h3 className="text-headingBlue font-black text-[30px] line-clamp-1">
-              Arinjii
+              {data[0].username}
             </h3>
           </div>
         </div>

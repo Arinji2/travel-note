@@ -14,9 +14,9 @@ function TripCard({ tripData }: { tripData: UserTrip }) {
   return (
     <Link
       href={`/trip/${tripData.id}`}
-      className="w-[90vw] md:w-[400px] h-[300px] bg-[#3F3D56] rounded-lg flex flex-col items-center justify-start m-2 gap-10 hover:shadow-md hover:shadow-black transition-all ease-in-out duration-300 hover:cursor-pointer"
+      className="w-[90vw] md:w-[350px] h-[300px] bg-[#3F3D56] rounded-lg flex flex-col items-center justify-start m-2 gap-10 hover:shadow-md hover:shadow-black transition-all ease-in-out duration-300 hover:cursor-pointer"
     >
-      <h2 className="font-bold text-[40px] pt-5 line-clamp-1 text-center w-[90%] h-[120px]">
+      <h2 className="font-bold text-[40px] pt-5 line-clamp-1 text-center w-[90%] h-[120px] text-white">
         {tripData.name}
       </h2>
       <div className="h-full w-[80%] flex flex-col items-start justify-start gap-3">
