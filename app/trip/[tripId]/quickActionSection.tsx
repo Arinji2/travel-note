@@ -52,12 +52,12 @@ function QuicActionCard({
       className="h-fit w-fit flex flex-col items-center justify-center shrink-0 gap-2 group pb-5"
     >
       <div
-        style={{ "--bg": color }}
+        style={{ "--bg": color } as React.CSSProperties}
         className={`w-[120px] h-[70px]  md:w-[170px] md:h-[100px] bg-background group-hover:bg-[--bg] rounded-[5px] flex flex-col items-center justify-center`}
       >
         <FontAwesomeIcon
           icon={actions.iconLink as IconProp}
-          style={{ "--bg": color }}
+          style={{ "--bg": color } as React.CSSProperties}
           className={`text-[--bg] w-[35px] md:w-[50px] h-[35px] md:h-[50px] group-hover:text-background transition-all ease-in-out duration-700`}
         />
       </div>
