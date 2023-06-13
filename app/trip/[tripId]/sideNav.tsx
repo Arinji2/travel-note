@@ -70,8 +70,17 @@ function SideNav() {
       }
       <FontAwesomeIcon
         onClick={() => setShowNav(!showNav)}
-        icon={showNav ? (faTimes as IconProp) : (faBars as IconProp)}
-        className="h-[40px] md:w-[50px] w-[40px] md:h-[50px] text-text hover:cursor-pointer transition-all ease-in-out duration-300 z-[200]"
+        icon={faBars as IconProp}
+        className={`${
+          showNav ? "opacity-0 hidden" : "opacity-100 block"
+        } h-[40px] md:w-[50px] w-[40px] md:h-[50px] text-text hover:cursor-pointer transition-all ease-in-out duration-700 z-[200]`}
+      />
+      <FontAwesomeIcon
+        onClick={() => setShowNav(!showNav)}
+        icon={faTimes as IconProp}
+        className={`${
+          showNav ? "opacity-100 block" : "opacity-0 hidden"
+        } h-[40px] md:w-[50px] w-[40px] md:h-[50px] text-text hover:cursor-pointer transition-all ease-in-out duration-700 z-[200]`}
       />
     </React.Fragment>
   );

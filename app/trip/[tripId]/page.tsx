@@ -66,8 +66,8 @@ export default async function Page({ params }: { params: { tripId: string } }) {
               },
               {
                 iconLink: faDownload,
-                link: `/trip/${tripId}/photos/manage`,
-                name: "Manage",
+                link: `/trip/${tripId}/photos/download`,
+                name: "Download",
               },
               {
                 iconLink: faPlus,
