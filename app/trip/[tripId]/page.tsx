@@ -21,10 +21,28 @@ export default async function Page({ params }: { params: { tripId: string } }) {
   const { userId } = auth();
   const supabase = await useSupabase();
   const { data } = await supabase.from("trips").select("*").eq("id", tripId);
-  if (data === null) redirect("/trip");
+  const Users = await supabase.from("access").select("*").eq("userId", userId);
+  if (data === null) redirect("/dashboard");
+  if (Users.data === null) redirect("/dashboard");
   if (userId === null) redirect("/signin");
+
+  if (Users.data.length === 0 && data[0].owner !== userId)
+    //Check if user is neither owner nor has access
+    redirect("/dashboard");
+
+  Users.data.forEach((element) => {
+    if (data[0].owner === userId) {
+      //Check if user is owner
+
+      return;
+    } else if (element.tripId === tripId) {
+      //Check if user has access
+      return;
+    } else {
+      redirect("/dashboard");
+    }
+  });
   const tripData = data[0] as Trip;
-  if (tripData.people.includes(userId) === false) redirect("/trip");
 
   return (
     <div className="w-full h-fit min-h-[100svh] bg-background flex flex-col items-center justify-start">

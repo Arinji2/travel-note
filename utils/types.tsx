@@ -13,7 +13,6 @@ export interface UserTrip {
   status: string;
   departure: string;
   area: string;
-
   role: string;
 }
 
@@ -22,29 +21,37 @@ export interface Trip {
   name: string;
   color: string;
   owner: string;
-  people: string[];
-  groups: Group[];
   hasBudget: boolean;
   budget: string;
   area: string;
   date: string;
-  images: DayImages[] | [];
-  documents: Document[];
 }
 
-export interface Group {
-  groupName: string;
-  people: string[];
-}
-export interface DayImages {
-  DayImages: Image[];
-}
-export interface Image {
-  owner: string;
-  url: string;
+export interface Access {
+  added_at: string;
+  tripId: string;
+  userId: string;
+  adderId: string;
+  group: string;
 }
 
 export interface Document {
+  id: string;
+  uploaded_at: string;
+  tripId: string;
+  userId: string;
   name: string;
-  url: string;
+  link: string;
+}
+
+export interface Spending {
+  id: string;
+  creatorId: string;
+  payerId: string;
+  description: string;
+  name: string;
+  amount: number;
+  category: string;
+  group: string;
+  created_at: string;
 }

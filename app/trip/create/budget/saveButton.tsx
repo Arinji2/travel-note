@@ -55,14 +55,10 @@ function SaveButon() {
             name: name as string,
             color: color as string,
             owner: userId as string,
-            people: [userId as string],
-            groups: [{ groupName: "Default", people: [userId as string] }],
             hasBudget: hasBudget == "true" ? true : false,
             budget: budget as string,
             area: area as string,
             date: date as string,
-            images: [],
-            documents: [],
           } as Trip;
           await fetch(
             `${process.env.NEXT_PUBLIC_DOMAIN_URL}/api/createUserTrip`,
