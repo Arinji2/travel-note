@@ -47,11 +47,11 @@ export interface Document {
 export interface Spending {
   id: string;
   creatorId: string;
-  payerId: string;
   description: string;
   name: string;
   amount: number;
   category: string;
   group: string;
   created_at: string;
+  tripId: string;
 }

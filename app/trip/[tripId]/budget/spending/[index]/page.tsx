@@ -21,7 +21,7 @@ export default async function Spending({
     .select("username")
     .eq("id", spendingData.creatorId);
   if (name.data === null) redirect("/dashboard");
-  spendingData.payerId = name.data[0].username;
+  spendingData.creatorId = name.data[0].username;
 
   let color = await supabase.from("trips").select("color").eq("id", tripId);
   if (color.data === null) redirect("/dashboard");
@@ -84,7 +84,7 @@ export default async function Spending({
             Paid By:
           </h2>
           <h2 className=" text-[15px] md:text-[30px] font-bold text-white line-clamp-2">
-            {spendingData.payerId}
+            {spendingData.creatorId}
           </h2>
         </div>
         <div className="flex flex-row items-center justify-start w-full h-fit gap-2 md:ml-10">
