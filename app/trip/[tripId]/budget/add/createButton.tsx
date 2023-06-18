@@ -49,7 +49,7 @@ function CreateButton({ tripId }: { tripId: string }) {
             name: name,
             amount: parseFloat(amount),
             description: desc === null ? "" : desc,
-            group: group === null ? "Default" : group,
+            group: group === null || group.length == 0 ? "Default" : group,
             tripId: tripId,
             category: category,
             created_at: date,
@@ -78,7 +78,7 @@ function CreateButton({ tripId }: { tripId: string }) {
             className="w-[30px] h-[30px] text-white"
           />
         ) : (
-          "Create Trip"
+          "Create Spending"
         )}
       </h4>
     </div>

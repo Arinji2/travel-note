@@ -35,7 +35,9 @@ function CategorySelector({ color }: { color: string }) {
         </div>
         <div
           className={`${
-            category === "Transport" ? "shadow-black shadow-lg scale-105 " : ""
+            category === "Transportation"
+              ? "shadow-black shadow-lg scale-105 "
+              : ""
           } w-[134px] transition-all ease-in-out duration-300 hover:shadow-lg text-white font-black text-[20px] flex flex-col items-center justify-center hover:shadow-black hover:scale-105 hover:cursor-pointer  h-[50px] rounded-lg bg-[--color] shrink-0`}
           onClick={() => setCategory("Transportation")}
           style={{ "--color": color } as React.CSSProperties}
