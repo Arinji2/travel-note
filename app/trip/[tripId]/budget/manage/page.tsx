@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { useSupabase } from "@/utils/hooks/useSupabase";
 import { Spending } from "@/utils/types";
 import { redirect } from "next/navigation";
