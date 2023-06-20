@@ -5,6 +5,7 @@ import { Trip } from "@/utils/types";
 import { redirect } from "next/navigation";
 import CategorySelector from "./categorySelector";
 import CreateButton from "./createButton";
+import { getColor } from "../utils";
 
 export default async function BudgetAddPage({
   params,
@@ -20,7 +21,8 @@ export default async function BudgetAddPage({
     .eq("id", tripId)
     .returns<Trip[]>();
   if (TripData.data === null) redirect("/dashboard");
-  const color = TripData.data[0].color;
+  let color = TripData.data[0].color;
+  color = getColor({ color: color });
   return (
     <div className="w-full h-fit min-h-[100svh] bg-background flex flex-col items-center justify-start">
       <h1 className="text-[40px] md:text-[60px] font-black text-white pt-14 text-center">

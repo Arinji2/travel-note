@@ -4,6 +4,7 @@ import { redirect } from "next/navigation";
 
 import * as React from "react";
 import RedirectButton from "./redirectButton";
+import { getColor } from "../../utils";
 
 export default async function Spending({
   params,
@@ -23,9 +24,13 @@ export default async function Spending({
   if (name.data === null) redirect("/dashboard");
   spendingData.creatorId = name.data[0].username;
 
-  let color = await supabase.from("trips").select("color").eq("id", tripId);
+  let color = (await supabase
+    .from("trips")
+    .select("color")
+    .eq("id", tripId)) as any;
   if (color.data === null) redirect("/dashboard");
   color = color.data[0].color;
+  color = getColor({ color });
   return (
     <div className="w-full h-fit min-h-[calc(100svh-120px)] bg-background flex flex-col items-center justify-start pb-5 gap-5">
       <div className="md:w-[70%]  w-[95%] h-full flex flex-col items-center md:items-start justify-center pt-10 md:pt-20 gap-10">

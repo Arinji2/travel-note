@@ -4,6 +4,7 @@ import { Spending } from "@/utils/types";
 import { redirect } from "next/navigation";
 import SpendingItem from "./spendingItem";
 import React from "react";
+import { getColor } from "../utils";
 
 export default async function Page({ params }: { params: { tripId: string } }) {
   const supabase = await useSupabase();
@@ -15,13 +16,15 @@ export default async function Page({ params }: { params: { tripId: string } }) {
     .eq("tripId", params.tripId)
     .returns<Spending[]>();
 
-  const colorData = await supabase
+  let colorData = await supabase
     .from("trips")
     .select("color")
     .eq("id", params.tripId);
 
   if (data === null) redirect("/dashboard");
   if (colorData === null) redirect("/dashboard");
+
+  colorData.data![0].color = getColor({ color: colorData.data![0].color });
 
   return (
     <div className="min-h-[100svh] h-fit w-full flex flex-col items-center justify-start gap-10 bg-background">

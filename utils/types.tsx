@@ -55,3 +55,15 @@ export interface Spending {
   created_at: string;
   tripId: string;
 }
+
+export interface Image {
+  id: string;
+  userId: string;
+  link: string;
+  height: string;
+  width: string;
+  name: string;
+
+  uploaded_at: string;
+  tripId: string;
+}

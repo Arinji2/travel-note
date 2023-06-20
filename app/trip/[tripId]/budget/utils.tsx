@@ -49,17 +49,11 @@ export function sortCategory({ spendingData }: { spendingData: Spending[] }) {
   return categories;
 }
 
-export function getColor({
-  spendingData,
-}: {
-  spendingData: {
-    color: string;
-  };
-}) {
-  let color = "";
-  if (spendingData.color === "violet") color = "#8b5cf6";
-  else if (spendingData.color === "green") color = "#22c55e";
-  else if (spendingData.color === "yellow") color = "#eab308";
+export function getColor({ color }: { color: string }) {
+  let locColor = "";
+  if (color === "violet") locColor = "#8b5cf6";
+  else if (color === "green") locColor = "#22c55e";
+  else if (color === "yellow") locColor = "#eab308";
 
-  return color;
+  return locColor;
 }
