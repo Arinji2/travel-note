@@ -92,7 +92,7 @@ export default function UserDropdown({
         <Link
           href={
             prevUser == undefined
-              ? `/trip/${tripId}/images/view?day=${day}$user=${user}`
+              ? `/trip/${tripId}/images/view?day=${day}&user=${user}`
               : `/trip/${tripId}/images/view/?day=${day}&user=${prevUser}`
           }
           className="flex flex-col items-start justify-center gap-1 hover:cursor-pointer group w-[90%]"

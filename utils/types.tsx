@@ -63,7 +63,7 @@ export interface Image {
   height: string;
   width: string;
   name: string;
-
+  day: string;
   uploaded_at: string;
   tripId: string;
 }

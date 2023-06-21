@@ -1,6 +1,6 @@
 import { useSupabase } from "@/utils/hooks/useSupabase";
 import { Trip } from "@/utils/types";
-import { auth } from "@clerk/nextjs";
+import { auth, currentUser } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
 import QuickActionSection from "./quickActionSection";
 import {
@@ -19,6 +19,7 @@ import { faPlaneDeparture } from "@fortawesome/free-solid-svg-icons";
 export default async function Page({ params }: { params: { tripId: string } }) {
   const { tripId } = params;
   const { userId } = auth();
+  const user = await currentUser();
   const supabase = await useSupabase();
   const { data } = await supabase.from("trips").select("*").eq("id", tripId);
   const Users = await supabase.from("access").select("*").eq("userId", userId);
@@ -74,12 +75,14 @@ export default async function Page({ params }: { params: { tripId: string } }) {
             ]}
           />
           <QuickActionSection
-            sectionName={"Photos"}
+            sectionName={"Images"}
             color={tripData.color}
             actions={[
               {
                 iconLink: faEye,
-                link: `/trip/${tripId}/photos/view`,
+                link: `/trip/${tripId}/images/view?user=${
+                  user!.username
+                }&day=1`,
                 name: "View",
               },
               {

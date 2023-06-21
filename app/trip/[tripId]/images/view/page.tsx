@@ -144,6 +144,7 @@ export default async function View({
       <div className="w-[95%] md:w-[90%] h-full gap-4 flex flex-row items-start justify-center flex-wrap mt-10 pb-5">
         {ImagesData.data!.map((image) => (
           <ImageComp
+            tripId={params.tripId}
             height={image.height}
             id={image.id}
             width={image.width}

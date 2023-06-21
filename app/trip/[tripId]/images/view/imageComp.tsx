@@ -9,14 +9,14 @@ function ImageComp({
   name,
   height,
   width,
-
+  tripId,
   id,
 }: {
   link: string;
   name: string;
   height: string;
   width: string;
-
+  tripId: string;
   id: string;
 }) {
   const [computedHeight, setComputedHeight] = useState("0px");
@@ -30,12 +30,15 @@ function ImageComp({
     setComputedWidth(newWidth.toString() + "px");
   }, []);
   return (
-    <Link href={`/images/image/${id}`} className="w-fit h-fit shrink-0">
+    <Link
+      href={`/trip/${tripId}/images/image/${id}`}
+      className="w-fit h-fit shrink-0"
+    >
       <div
         className="relative rounded-lg overflow-hidden group flex flex-col items-start justify-end hover:cursor-pointer"
         style={{
           height: computedHeight,
-          width: window.innerWidth > 768 ? computedWidth : "97vw",
+          width: window.innerWidth > 768 ? computedWidth : "95vw",
         }}
       >
         <Image
