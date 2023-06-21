@@ -68,20 +68,26 @@ function SideNav() {
           </div>
         </div>
       }
-      <FontAwesomeIcon
-        onClick={() => setShowNav(!showNav)}
-        icon={faBars as IconProp}
-        className={`${
-          showNav ? "opacity-0 hidden" : "opacity-100 block"
-        } h-[40px] md:w-[50px] w-[40px] md:h-[50px] text-text hover:cursor-pointer transition-all ease-in-out duration-700 z-[200]`}
-      />
-      <FontAwesomeIcon
-        onClick={() => setShowNav(!showNav)}
-        icon={faTimes as IconProp}
-        className={`${
-          showNav ? "opacity-100 block" : "opacity-0 hidden"
-        } h-[40px] md:w-[50px] w-[40px] md:h-[50px] text-text hover:cursor-pointer transition-all ease-in-out duration-700 z-[200]`}
-      />
+      <div className="w-[50px] h-[50px] flex flex-col items-center justify-center">
+        <FontAwesomeIcon
+          onClick={() => setShowNav(!showNav)}
+          icon={faBars as IconProp}
+          className={`${
+            showNav
+              ? "opacity-0 hidden h-0 w-0 absolute "
+              : "opacity-100 block h-[50px] md:w-[70px] w-[50px] md:h-[70px] relative "
+          }  text-5xl shrink-0 text-text hover:cursor-pointer transition-all ease-in-out duration-700 z-[200]`}
+        />
+        <FontAwesomeIcon
+          onClick={() => setShowNav(!showNav)}
+          icon={faTimes as IconProp}
+          className={`${
+            showNav
+              ? "opacity-100 block relative "
+              : "opacity-0 hidden absolute "
+          } h-[50px] md:w-[70px] w-[50px] md:h-[70px] text-5xl text-text hover:cursor-pointer transition-all ease-in-out duration-700 z-[200]`}
+        />
+      </div>
     </React.Fragment>
   );
 }

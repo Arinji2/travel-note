@@ -33,7 +33,7 @@ export default function UserDropdown({
   return (
     <div
       className={`${
-        isActive ? " md:h-fit h-[280px] mt-5 " : "h-fit "
+        isActive ? " md:h-fit h-[280px] z-10 " : "h-fit "
       }relative h-fit transition-all ease-in-out duration-300`}
     >
       <div

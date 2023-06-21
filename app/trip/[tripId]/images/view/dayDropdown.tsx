@@ -30,8 +30,8 @@ export default function DayDropdown({
   return (
     <div
       className={`${
-        isActive ? " md:h-fit h-[280px] " : "h-fit "
-      }relative h-fit transition-all ease-in-out duration-300`}
+        isActive ? " md:h-fit h-[280px] z-20 " : "h-fit "
+      }relative h-fit transition-all ease-in-out duration-300 `}
     >
       <div
         className="flex flex-row items-center justify-center gap-x-3 hover:cursor-pointer "
