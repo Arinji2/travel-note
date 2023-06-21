@@ -85,8 +85,8 @@ export default async function View({
   let color = getColor({ color: colorData.data![0].color });
 
   return (
-    <div className="w-full min-h-[100svh] h-fit flex flex-col items-center justify-start pt-14 bg-background">
-      <div className="w-[90%] h-fit md:h-[200px] flex flex-col md:flex-row items-start md:items-start justify-evenly">
+    <div className="w-full h-fit flex flex-col items-center justify-start pt-14 bg-background">
+      <div className="w-[90%] h-[400px] md:h-[200px] flex flex-col md:flex-row items-start md:items-start justify-evenly">
         <DayDropdown
           limit={parseInt(uniqueDays[uniqueDays.length - 1])}
           currentDay={parseInt(day)}
@@ -103,7 +103,7 @@ export default async function View({
           color={color}
         />
       </div>
-      <div className="w-[90%] md:w-[80%] h-[300px] bg-[#1E1E1E] mt-10 rounded-lg flex flex-col items-center justify-start">
+      <div className="w-[90%] md:w-[80%] h-fit relative md:h-[300px] bg-[#1E1E1E] rounded-lg flex flex-col items-center justify-start mt-10">
         <h2 className="text-[40px] text-white font-black pt-10">Details</h2>
         <div className="flex flex-col items-start justify-center w-[90%] md:w-[70%] h-full line-clamp-1 gap-5">
           <div className="flex flex-row items-center justify-start gap-3">
