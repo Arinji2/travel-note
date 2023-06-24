@@ -87,7 +87,7 @@ export default async function Page({ params }: { params: { tripId: string } }) {
               },
               {
                 iconLink: faDownload,
-                link: `/trip/${tripId}/photos/download`,
+                link: `/trip/${tripId}/images/download`,
                 name: "Download",
               },
               {
