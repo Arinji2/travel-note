@@ -92,7 +92,7 @@ export default async function Page({ params }: { params: { tripId: string } }) {
               },
               {
                 iconLink: faPlus,
-                link: `/trip/${tripId}/photos/add`,
+                link: `/trip/${tripId}/images/upload`,
                 name: "Add",
               },
             ]}

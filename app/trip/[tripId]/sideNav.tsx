@@ -30,7 +30,7 @@ function SideNav() {
               <div className="w-0 group-hover:w-full transition-all ease-in-out duration-500 h-[6px] bg-white origin-left"></div>
             </Link>
             <Link
-              href={`/trip/${tripId}/photos`}
+              href={`/trip/${tripId}/images`}
               className="w-fit h-fit group hover:cursor-pointer"
             >
               <h1 className="text-[30px] text-white font-black">Photos</h1>

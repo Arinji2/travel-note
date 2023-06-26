@@ -66,4 +66,5 @@ export interface Image {
   day: string;
   uploaded_at: string;
   tripId: string;
+  fileId: string;
 }

@@ -22,3 +22,11 @@ export async function getUserIdClient(username: string) {
   if (data === null || data[0] === undefined) return null;
   return data[0].id as string;
 }
+
+export const toBase64 = (file: File) =>
+  new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = reject;
+  });
