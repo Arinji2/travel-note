@@ -4,11 +4,17 @@ import { UserTrip } from "@/utils/types";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 
-function TripCard({ tripData }: { tripData: UserTrip }) {
+function TripCard({
+  tripData,
+  tripStatus,
+}: {
+  tripData: UserTrip;
+  tripStatus: string;
+}) {
   const [status, setStatus] = useState("text-white");
   useEffect(() => {
-    if (tripData.status === "Ongoing") setStatus("text-green-400");
-    else if (tripData.status === "Completed") setStatus("text-red-400");
+    if (tripStatus === "Ongoing") setStatus("text-green-400");
+    else if (tripStatus === "Completed") setStatus("text-red-400");
     else setStatus("text-yellow-400");
   });
   return (
@@ -39,9 +45,7 @@ function TripCard({ tripData }: { tripData: UserTrip }) {
             </h3>
           </div>
           <div className="w-[70%] h-fit text-left">
-            <h3 className={`${status} font-bold text-[15px]`}>
-              {tripData.status}
-            </h3>
+            <h3 className={`${status} font-bold text-[15px]`}>{tripStatus}</h3>
           </div>
         </div>
         <div className="w-full h-fit flex flex-row items-center justify-start gap-3">

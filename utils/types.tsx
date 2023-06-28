@@ -10,7 +10,6 @@ export interface UserTrip {
   id: string;
   name: string;
   people: number;
-  status: string;
   departure: string;
   area: string;
   role: string;
@@ -25,6 +24,7 @@ export interface Trip {
   budget: string;
   area: string;
   date: string;
+  status: string;
 }
 
 export interface Access {
