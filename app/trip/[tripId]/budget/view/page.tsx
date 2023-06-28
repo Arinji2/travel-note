@@ -9,6 +9,8 @@ import SpendingItem from "../spendingItem";
 import { sortCategory, sortGroup } from "../utils";
 import RedirectButton from "./redirectButton";
 
+import ChartComponent from "./spendingGraph";
+
 export default async function BudgetViewPage({
   params,
 }: {
@@ -39,8 +41,9 @@ export default async function BudgetViewPage({
 
   const SpendingData = await supabase
     .from("spendings")
-    .select("amount, category, group")
+    .select("*")
     .eq("tripId", tripId)
+    .order("created_at", { ascending: true })
     .returns<Spending[]>();
 
   if (
@@ -54,6 +57,15 @@ export default async function BudgetViewPage({
   const categories = sortCategory({ spendingData: SpendingData.data });
   const groups = sortGroup({ spendingData: SpendingData.data });
   const totalSpending = SpendingData.data.reduce((a, b) => a + b.amount, 0);
+
+  let dates = SpendingData.data.map((spending) => spending.created_at);
+
+  dates = dates.map((date) => {
+    const [year, month, day] = date.split("-");
+    return `${day}/${month}`;
+  });
+
+  let spendings = SpendingData.data.map((spending) => spending.amount);
 
   return (
     <div className="w-full h-fit min-h-[100svh] flex flex-col items-center justify-start bg-background">
@@ -209,6 +221,9 @@ export default async function BudgetViewPage({
                 )}
               </React.Fragment>
             ))}
+          </div>
+          <div className="w-full max-h-[70svh] h-fit mb-10 mt-10 flex flex-col items-center justify-center">
+            <ChartComponent dates={dates} spendings={spendings} />
           </div>
           <div className="pb-10">
             <RedirectButton tripId={tripId} />
